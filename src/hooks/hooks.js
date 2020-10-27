@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
+const base_URL = 'http://3.133.229.171'
 
 export function useGetPokes(limit, offset) {
     const [loading, setLoading] = useState(true)
@@ -12,7 +13,7 @@ export function useGetPokes(limit, offset) {
         setError(false)
             axios({
                 method: 'GET',
-                url: 'http://3.22.68.21/api/pokemon',
+                url: `${base_URL}/api/pokemon`,
                 params: {offset: offset, limit: limit},
                 cancelToken: new axios.CancelToken(c => cancel = c)
             })
@@ -44,7 +45,7 @@ export function usePokeDetail(id) {
     useEffect(() => {
         axios({
             method: 'GET',
-            url: `http://3.22.68.21/api/pokemon/${id}`
+            url: `${base_URL}/api/pokemon/${id}`
         })
         .then(res => setDetail(res.data))
         .catch(err => console.error(err))
@@ -58,7 +59,7 @@ export function usePokeType(type) {
     useEffect(() => {
         axios({
             method: 'GET',
-            url: `http://3.22.68.21/api/pokemon?type=${type}`
+            url: `${base_URL}/api/pokemon?type=${type}`
         })
         .then(res => setData(res.data.rows))
         .catch(err => console.error(err))

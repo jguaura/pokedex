@@ -8,7 +8,6 @@ const Card = ({ poke, passRef }) => {
     return (
             <CardContent className="card">
                 <div className="card-container">
-                    
                     <div className="card-container__sprite">
                         <Link to={`/pokemon/${poke.id}`}>
                             <img ref={passRef && passRef} src={poke.sprite} alt={poke.id}/>
