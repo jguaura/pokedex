@@ -14,7 +14,10 @@ const Card = ({ poke, passRef }) => {
                         </Link>
                     </div>
                     <div className="card-container__text">
-                        <h4>{poke.name}</h4>
+                        <div className="text-header">
+                            <h4>{poke.name}</h4>
+                            <h4>#{poke.number}</h4>
+                        </div>
                         <div className="card-container__types">
                             {   
                                 poke.types.map(type => <TypeBadge type={type} key={type}/>)
@@ -44,12 +47,24 @@ export const CardContent = styled.div`
             display: flex;
             flex-direction: column;
             align-items: center;
-            flex: 1;
             height: 150px;
+            width: 50%;
+
+            .text-header {
+                width: 100%;
+                padding: 10px 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
             
             h4 {
-                margin-top: 1rem;
-                font-size: 1.3rem;
+                /* margin-top: 1rem; */
+                font-size: 1.2rem;
+                &:last-of-type {
+                    font-weight: normal;
+                    color: #3a3a3a;
+                }
             }
         }
 
