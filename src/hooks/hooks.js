@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-const base_URL = 'http://3.133.229.171'
+const base_URL = 'https://jguaura.ml'
 
 export function useGetPokes(limit, offset) {
     const [loading, setLoading] = useState(true)
