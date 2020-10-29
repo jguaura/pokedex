@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-const base_URL = 'https://jguaura.ml/api/pokemon'
+const base_URL = 'https://jguaura.ml'
 
 export function useGetPokes(limit, offset) {
     const [loading, setLoading] = useState(true)
