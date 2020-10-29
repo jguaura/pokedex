@@ -7,6 +7,8 @@ import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import PokeDetailPage from './pages/PokeDetailPage'
 import PokemonByTypes from './pages/PokemonByTypes'
+//? Nav
+import Navbar from './components/NavBar/Navbar'
 //? Emotion
 import { MainWrapper, Container } from './emotion/components'
 
@@ -14,6 +16,7 @@ function App() {
   return (
     <Router>
       <MainWrapper>
+      <Navbar />
         <Container>
           <Switch>
             <Route exact path="/" component={HomePage} />

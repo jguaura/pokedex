@@ -70,7 +70,7 @@ export const CardContent = styled.div`
 
         &__types {
             display: flex;
-            width: 60%;
+            width: 85%;
             justify-content: space-evenly;
             flex: 1;
 

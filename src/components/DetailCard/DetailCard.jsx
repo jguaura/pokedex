@@ -8,7 +8,10 @@ const DetailCard = ({ poke }) => {
     return (
         <DetailContent>
             <div className="card-container">
-                <h2>{poke.name}</h2>
+                <div className="text-header">
+                    <h4>{poke.name}</h4>
+                    <h4>#{poke.number}</h4>
+                </div>
                 <div className="card-container__sprite">
                     <img src={poke.sprite} alt="pokemon img" />
                 </div>
@@ -39,6 +42,19 @@ const DetailContent = styled(CardContent)`
         flex-direction: column;
 
         h2 {margin: 1rem 0;}
+
+        .text-header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+            h4 {
+                font-size: 1.3rem;
+                &:last-of-type {
+                    color: #3a3a3a;
+                    font-weight: normal;    
+                }    
+            }
+        }
 
         &__sprite {
             width: 100%;

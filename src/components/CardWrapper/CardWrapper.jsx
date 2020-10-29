@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import styled from '@emotion/styled'
-import uuid  from 'uuid'
 import Card from '../Card/Card'
 
 // custom hook
@@ -8,7 +7,7 @@ import { useGetPokes } from './../../hooks/hooks'
 
 const CardWrapper = () => {
     const [offset, setOffset] = useState(0)
-    const [limit, setLimit] = useState(5)
+    const [limit, setLimit] = useState(10)
     const {
         loading,
         error,
@@ -48,10 +47,12 @@ const CardWrapper = () => {
 }
 
 export const Wrapper = styled.div`
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    max-height: 100vh;
 
     a {
         text-decoration: none;
