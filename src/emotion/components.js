@@ -1,7 +1,11 @@
 import styled from '@emotion/styled'
 
 export const MainWrapper = styled.div`
+    font-family: 'Lato', sans-serif;
     width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     /* min-height: 100vh; */
 `
 export const Container = styled.div`
@@ -13,8 +17,14 @@ export const Container = styled.div`
 export const TypeWrapper = styled.div`
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    gap: 10px 0;
+    gap: 15px 5px;
     margin-top: 2rem;
+    @media (min-width: 550px) {
+        gap: 20px 0;
+    }
+    @media (min-width: 1000px) {
+        gap: 30px 0;
+    }
 
     .icon {
         border-radius: 100%;

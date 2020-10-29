@@ -30,7 +30,7 @@ const PokemonByTypes = () => {
                     <TypeBadge type={'ground'}/>                    
                 </TypeWrapper>
             </div>
-            <h2 style={{textTransform: 'capitalize', textAlign: 'center', margin: '2rem 0 0 0 0'}}>{type} Pokemons</h2>
+            <h2 style={{textTransform: 'capitalize', textAlign: 'center', margin: '3rem 0 0 0'}}>{type} Pokemons</h2>
             <Wrapper>    
                 {
                     data &&
