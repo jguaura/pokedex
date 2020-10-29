@@ -1,8 +1,7 @@
-import React from 'react';
-import './App.css';
+import React from 'react'
 
 //? Router
-import { BrowserRouter as Router, Link, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 //? Pages
 import HomePage from './pages/HomePage'
 import PokeDetailPage from './pages/PokeDetailPage'
@@ -26,7 +25,7 @@ function App() {
         </Container>
       </MainWrapper>
     </Router>
-  );
+  )
 }
 
 export default App;
