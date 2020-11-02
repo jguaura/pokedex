@@ -6,7 +6,7 @@ const Bar = ({ setOpen }) => {
         <div className="nav">
             <div className="nav-logo">
                 <Link to="/">
-                    <img src={require('../../assets/nav-pokeball.png')} alt=""/>
+                    <img src={'https://res.cloudinary.com/jguaura/image/upload/c_scale,w_40/v1604305665/Pokedex/nav-pokeball.15df305c_sk5ql0.webp'} alt=""/>
                 </Link>
             </div>
             

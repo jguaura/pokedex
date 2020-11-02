@@ -24,13 +24,12 @@ export function useGetPokes(limit, offset) {
                 })
                 setHasMore(offset < res.data.count)
                 setTimeout(() => {setLoading(false)}, 1000)
-                // setLoading(false)
-                // setLoading(true)
             })
             .catch(err => {
                 if (axios.isCancel(err)) return
                 setError(true)
             })
+            .finally(() => {setLoading(false)})
             return () => cancel()
             
     }, [limit, offset])
