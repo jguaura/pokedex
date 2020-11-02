@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState, useCallback } from 'react'
+import React, { useRef, useState, useCallback } from 'react'
 import styled from '@emotion/styled'
 import Card from '../Card/Card'
 import Skeleton from '../Skeleton/Skeleton'
@@ -17,7 +17,7 @@ const CardWrapper = () => {
     } = useGetPokes(limit, offset)
     const observer = useRef()
     let arr = new Array(10).fill(1)
-    
+
     const lastPokeElRef = useCallback(node =>{
         if (loading) return
         if(observer.current) observer.current.disconnect()
