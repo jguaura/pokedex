@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-const base_URL = 'https://jguaura.ml'
-// const base_URL = 'http://localhost:8080'
+// const base_URL = 'https://jguaura.ml'
+const base_URL = 'http://localhost:8080'
 
 export function useGetPokes(limit, offset) {
     const [loading, setLoading] = useState(true)
@@ -10,7 +10,7 @@ export function useGetPokes(limit, offset) {
     const [hasMore, setHasMore] = useState(false)
     useEffect(() => {
         let cancel
-        setLoading(true)
+            
         setError(false)
             axios({
                 method: 'GET',
@@ -23,7 +23,9 @@ export function useGetPokes(limit, offset) {
                     return [...prevPokes, res.data.rows ]
                 })
                 setHasMore(offset < res.data.count)
-                setLoading(false)
+                setTimeout(() => {setLoading(false)}, 1000)
+                // setLoading(false)
+                // setLoading(true)
             })
             .catch(err => {
                 if (axios.isCancel(err)) return

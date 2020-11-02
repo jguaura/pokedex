@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from 'react'
 import styled from '@emotion/styled'
 import Card from '../Card/Card'
+import Skeleton from '../Skeleton/Skeleton'
 
 // custom hook
 import { useGetPokes } from './../../hooks/hooks'
@@ -15,6 +16,8 @@ const CardWrapper = () => {
         hasMore
     } = useGetPokes(limit, offset)
     const observer = useRef()
+    let arr = new Array(10).fill(1)
+    console.log(arr, 'arr')
     const lastPokeElRef = useCallback(node =>{
         if (loading) return
         if(observer.current) observer.current.disconnect()
@@ -39,8 +42,10 @@ const CardWrapper = () => {
                 }))
             }
             {
+
+            
               loading && 
-                <h1 style={{marginTop: 'auto'}}>Loading</h1>
+                arr.map(el => <Skeleton />)
             }
         </Wrapper>
     )
