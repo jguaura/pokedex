@@ -10,7 +10,7 @@ export function useGetPokes(limit, offset) {
     const [hasMore, setHasMore] = useState(false)
     useEffect(() => {
         let cancel
-            
+        setLoading(true)
         setError(false)
             axios({
                 method: 'GET',
