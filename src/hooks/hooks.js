@@ -29,7 +29,7 @@ export function useGetPokes(limit, offset) {
                 if (axios.isCancel(err)) return
                 setError(true)
             })
-            .finally(() => {setLoading(false)})
+            // .finally(() => {setLoading(false)})
             return () => cancel()
             
     }, [limit, offset])
