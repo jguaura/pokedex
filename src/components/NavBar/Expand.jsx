@@ -38,6 +38,7 @@ const Expanded = styled.div`
         font-weight: bold;
         color: #fff;
         margin-left: auto;
+        cursor: pointer;
     }
 
     .expand-grid {
@@ -45,9 +46,12 @@ const Expanded = styled.div`
         grid-template-columns: repeat(2, 1fr);
         gap: 5px;
         /* background-image: radial-gradient( circle 344px at 1.4% 0%,  rgba(242,185,252,1) 19.3%, rgba(250,254,190,1) 80.7% ); */
-
         a { text-decoration: none; color: #fff;}
-
+        @media (min-width: 767px) {
+            width: 50%;
+            gap: 10px;
+            margin: 0 auto;
+        }
         &__col {
             display: flex;
             flex-direction: column;
@@ -59,6 +63,7 @@ const Expanded = styled.div`
             border: 1px solid;
             border-image-source: radial-gradient( circle 344px at 1.4% 0%,  rgba(242,185,252,1) 19.3%, rgba(250,254,190,1) 80.7% );
             border-image-slice: 1;
+            cursor: pointer;
 
             img { margin-bottom: 1rem; width: 45px;}
         }

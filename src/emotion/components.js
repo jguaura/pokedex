@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import 'typeface-lato'
 
 export const MainWrapper = styled.div`
     font-family: 'Lato', sans-serif;

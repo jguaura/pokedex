@@ -17,7 +17,7 @@ const CardWrapper = () => {
     } = useGetPokes(limit, offset)
     const observer = useRef()
     let arr = new Array(10).fill(1)
-    console.log(arr, 'arr')
+    
     const lastPokeElRef = useCallback(node =>{
         if (loading) return
         if(observer.current) observer.current.disconnect()
@@ -42,8 +42,6 @@ const CardWrapper = () => {
                 }))
             }
             {
-
-            
               loading && 
                 arr.map(el => <Skeleton />)
             }

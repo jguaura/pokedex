@@ -1,15 +1,17 @@
 {
   "files": {
-    "main.js": "/static/js/main.4833da25.chunk.js",
-    "main.js.map": "/static/js/main.4833da25.chunk.js.map",
+    "main.js": "/static/js/main.4f92d3f5.chunk.js",
+    "main.js.map": "/static/js/main.4f92d3f5.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.9ff9079d.js",
     "runtime-main.js.map": "/static/js/runtime-main.9ff9079d.js.map",
-    "static/js/2.6344d2d3.chunk.js": "/static/js/2.6344d2d3.chunk.js",
-    "static/js/2.6344d2d3.chunk.js.map": "/static/js/2.6344d2d3.chunk.js.map",
+    "static/css/2.ae13573a.chunk.css": "/static/css/2.ae13573a.chunk.css",
+    "static/js/2.a293b18d.chunk.js": "/static/js/2.a293b18d.chunk.js",
+    "static/js/2.a293b18d.chunk.js.map": "/static/js/2.a293b18d.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.ca7aaf643c25e8a61897c8c4a83e7002.js": "/precache-manifest.ca7aaf643c25e8a61897c8c4a83e7002.js",
+    "precache-manifest.a55d410889b7b59a550b3ffdb7d40088.js": "/precache-manifest.a55d410889b7b59a550b3ffdb7d40088.js",
     "service-worker.js": "/service-worker.js",
-    "static/js/2.6344d2d3.chunk.js.LICENSE.txt": "/static/js/2.6344d2d3.chunk.js.LICENSE.txt",
+    "static/css/2.ae13573a.chunk.css.map": "/static/css/2.ae13573a.chunk.css.map",
+    "static/js/2.a293b18d.chunk.js.LICENSE.txt": "/static/js/2.a293b18d.chunk.js.LICENSE.txt",
     "static/media/bug.svg": "/static/media/bug.14540979.svg",
     "static/media/dark.svg": "/static/media/dark.b7d4f578.svg",
     "static/media/dragon.svg": "/static/media/dragon.18a1dbc9.svg",
@@ -22,6 +24,7 @@
     "static/media/grass.svg": "/static/media/grass.d589dd00.svg",
     "static/media/ground.svg": "/static/media/ground.289c4927.svg",
     "static/media/ice.svg": "/static/media/ice.f82b7e5d.svg",
+    "static/media/index.css": "/static/media/lato-latin-900italic.bd86aaa7.woff2",
     "static/media/nav-pokeball.png": "/static/media/nav-pokeball.15df305c.png",
     "static/media/normal.svg": "/static/media/normal.8f2a7aaa.svg",
     "static/media/poison.svg": "/static/media/poison.183135e9.svg",
@@ -32,7 +35,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.9ff9079d.js",
-    "static/js/2.6344d2d3.chunk.js",
-    "static/js/main.4833da25.chunk.js"
+    "static/css/2.ae13573a.chunk.css",
+    "static/js/2.a293b18d.chunk.js",
+    "static/js/main.4f92d3f5.chunk.js"
   ]
 }

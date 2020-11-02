@@ -72,6 +72,7 @@ const Navibar = styled.div`
             align-items: center;
             justify-content: center;
             width: 15%;
+            cursor: pointer;
 
             img {
                 height: 35px;
