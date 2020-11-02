@@ -42,7 +42,7 @@ const CardWrapper = () => {
                 }))
             }
             {
-              loading && 
+                loading &&
                 arr.map(el => <Skeleton />)
             }
         </Wrapper>

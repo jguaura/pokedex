@@ -5,10 +5,12 @@ import Card from '../components/Card/Card'
 import TypeBadge from '../components/TypeBadge/TypeBadge'
 import { Wrapper } from '../components/CardWrapper/CardWrapper'
 import { TypeWrapper } from './../emotion/components'
+import Skeleton from '../components/Skeleton/Skeleton'
 const PokemonByTypes = () => {
     let type = useParams()
     type = type.type
-    const data = usePokeType(type)
+    const {data, loading} = usePokeType(type)
+    const arr = new Array(5).fill(2)
 
     return (
         <div>
@@ -33,8 +35,13 @@ const PokemonByTypes = () => {
             <h2 style={{textTransform: 'capitalize', textAlign: 'center', margin: '3rem 0 0 0'}}>{type} Pokemons</h2>
             <Wrapper>    
                 {
-                    data &&
-                        data.map(poke => <Card poke={poke}/>)
+                    data && !loading &&
+                       data.map(poke => <Card poke={poke}/>)
+                      
+                }
+                {
+                    loading &&
+                    arr.map(() => <Skeleton />)
                 }
             </Wrapper>
         </div>

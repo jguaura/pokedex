@@ -32,6 +32,7 @@ const SkeletonCard = styled.div`
     position: relative;
     overflow-x: hidden;
     margin-bottom: 2rem;
+    @media(min-width: 1230px) { height: 160px; }
     &::before {
         content: ' ';
         display: block;
@@ -42,6 +43,7 @@ const SkeletonCard = styled.div`
         width: 100%;
         background: linear-gradient(to right, transparent 0%, #e8e8e8 50%, transparent 100%);
         animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
+        @media (min-width: 1230px) { height: 160px; }
     }
     @keyframes load {
         from {
@@ -84,6 +86,9 @@ const SkeletonCard = styled.div`
                 display: flex;
                 justify-content: center;
                 margin: 1.3rem 0 0 0;
+                @media (min-width: 1230px) {
+                    margin-top: 2.2rem;
+                }
                 .circle {
                     width: 40px;
                     height:40px;
@@ -91,6 +96,7 @@ const SkeletonCard = styled.div`
                     background-color: #D8D8D8;
                     &:last-of-type {
                         margin-left: 1rem;
+                        @media(min-width: 1230px) {margin-left: 3.5rem;}
                     }
                 }
             }

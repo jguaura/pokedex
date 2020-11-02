@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import axios from 'axios'
-const base_URL = 'https://jguaura.ml'
-// const base_URL = 'http://localhost:8080'
+// const base_URL = 'https://jguaura.ml'
+const base_URL = 'http://localhost:8080'
 
 export function useGetPokes(limit, offset) {
     const [loading, setLoading] = useState(true)
@@ -43,28 +43,34 @@ export function useGetPokes(limit, offset) {
 
 export function usePokeDetail(id) {
     const [detail, setDetail] = useState()
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
+        setLoading(true)
         axios({
             method: 'GET',
             url: `${base_URL}/api/pokemon/${id}`
         })
         .then(res => setDetail(res.data))
         .catch(err => console.error(err))
+        .finally(() => setLoading(false))
     }, [id])
 
-    return { detail }
+    return { detail, loading }
 }
 
 export function usePokeType(type) {
     const [data, setData] = useState()
+    const [loading, setLoading] = useState(true)
     useEffect(() => {
+        setLoading(true)
         axios({
             method: 'GET',
             url: `${base_URL}/api/pokemon?type=${type}`
         })
         .then(res => setData(res.data.rows))
         .catch(err => console.error(err))
+        .finally(() => setLoading(false))
     }, [type])
     
-    return data
+    return {data, loading}
 }
