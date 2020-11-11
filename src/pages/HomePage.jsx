@@ -5,9 +5,9 @@ import CardWrapper from '../components/CardWrapper/CardWrapper'
 
 const HomePage = () => {
     return (
-        <div>
+        <>
             <CardWrapper />
-        </div>
+        </>
     )
 }
 

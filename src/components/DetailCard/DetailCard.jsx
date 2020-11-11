@@ -14,7 +14,7 @@ const DetailCard = ({ poke }) => {
             <div className="card-container">
                 <div className="container-box">
                     <div className="card-container__sprite">
-                    <img src={poke.sprite} alt="pokemon img" />
+                        <img src={poke.sprite} alt="pokemon img" />
                     </div>
                 </div>
                 <div className="container-box">
@@ -41,7 +41,8 @@ const DetailCard = ({ poke }) => {
 }
 
 const DetailContent = styled(CardContent)`
-
+    * { color: ${props => props.theme.colors.fontPrimary} }
+    padding-bottom: 20px;
     @media(min-width: 1230px) {
         width: 70%;
     }
@@ -54,7 +55,7 @@ const DetailContent = styled(CardContent)`
             font-size: 1.3rem;
             margin: 2rem 0 1rem 0;
             &:last-of-type {
-                color: #3a3a3a;
+                color: ${props => props.theme.colors.fontSecondary};
                 font-weight: normal;    
             }
             @media (min-width: 1230px) {

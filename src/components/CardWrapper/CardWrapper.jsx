@@ -8,7 +8,7 @@ import { useGetPokes } from './../../hooks/hooks'
 
 const CardWrapper = () => {
     const [offset, setOffset] = useState(0)
-    const [limit, setLimit] = useState(10)
+    const [limit, setLimit] = useState(12)
     const {
         loading,
         error,
@@ -16,7 +16,7 @@ const CardWrapper = () => {
         hasMore
     } = useGetPokes(limit, offset)
     const observer = useRef()
-    let arr = new Array(10).fill(1)
+    let arr = new Array(12).fill(1)
 
     const lastPokeElRef = useCallback(node =>{
         if (loading) return
@@ -28,7 +28,7 @@ const CardWrapper = () => {
         })
         if (node) observer.current.observe(node)
     }, [loading, hasMore, limit])
-
+    
     return (
         <Wrapper>
             {   
@@ -54,7 +54,6 @@ export const Wrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-height: 100vh;
 
     a {
         text-decoration: none;

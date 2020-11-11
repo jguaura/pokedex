@@ -27,7 +27,7 @@ const SkeletonCard = styled.div`
     height: 120px;
     min-height: 120px;
     box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15);
-    background-color: #EEE;
+    background-color: ${props => props.theme.colors.background};
     border-radius: 4px;
     position: relative;
     overflow-x: hidden;
@@ -41,7 +41,7 @@ const SkeletonCard = styled.div`
         top: 0;
         height: 120px;
         width: 100%;
-        background: linear-gradient(to right, transparent 0%, #e8e8e8 50%, transparent 100%);
+        background: linear-gradient(to right, transparent 0%, ${props => props.theme.colors.skeletonBox} 50%, transparent 100%);
         animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
         @media (min-width: 1230px) { height: 160px; }
     }
@@ -58,7 +58,8 @@ const SkeletonCard = styled.div`
             .box {
                 height: 100%;
                 width: 100%;
-                background-color: #D8D8D8;
+                /* background-color: #D8D8D8; */
+                background-color: ${props => props.theme.colors.skeletonBox}
             }
         }
         .card-content {
@@ -72,7 +73,7 @@ const SkeletonCard = styled.div`
                 display: flex;
                 justify-content: space-between; 
                 .title { 
-                    background-color: #D8D8D8; 
+                    background-color: ${props => props.theme.colors.skeletonBox}; 
                     height: 20px; 
                     width: 60%;
                     border-radius: 12px; 
@@ -93,7 +94,7 @@ const SkeletonCard = styled.div`
                     width: 40px;
                     height:40px;
                     border-radius: 50%;
-                    background-color: #D8D8D8;
+                    background-color: ${props => props.theme.colors.skeletonBox};
                     &:last-of-type {
                         margin-left: 1rem;
                         @media(min-width: 1230px) {margin-left: 3.5rem;}

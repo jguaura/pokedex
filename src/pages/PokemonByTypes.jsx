@@ -6,6 +6,7 @@ import TypeBadge from '../components/TypeBadge/TypeBadge'
 import { Wrapper } from '../components/CardWrapper/CardWrapper'
 import { TypeWrapper } from './../emotion/components'
 import Skeleton from '../components/Skeleton/Skeleton'
+import styled from '@emotion/styled'
 const PokemonByTypes = () => {
     let type = useParams()
     type = type.type
@@ -32,7 +33,7 @@ const PokemonByTypes = () => {
                     <TypeBadge type={'ground'}/>                    
                 </TypeWrapper>
             </div>
-            <h2 style={{textTransform: 'capitalize', textAlign: 'center', margin: '3rem 0 0 0'}}>{type} Pokemons</h2>
+            <TypeTitle>{type} Pokemons</TypeTitle>
             <Wrapper>    
                 {
                     data && !loading &&
@@ -47,5 +48,12 @@ const PokemonByTypes = () => {
         </div>
     )
 }
+
+const TypeTitle = styled.h2`
+    text-transform: capitalize;
+    text-align: center;
+    margin: 2rem 0 0 0;
+    color: ${props => props.theme.colors.fontPrimary};
+`
 
 export default PokemonByTypes

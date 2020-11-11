@@ -7,6 +7,7 @@ export const MainWrapper = styled.div`
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    background-color: ${props => props.theme.colors.background}
     /* min-height: 100vh; */
 `
 export const Container = styled.div`

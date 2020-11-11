@@ -1,30 +1,32 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import styled from '@emotion/styled'
-import { Link } from 'react-router-dom'
-import Expand from './Expand'
 import Bar from './Bar'
+import { AppProvider } from './../../context/context';
+import NewExpand from './../newExpand/NewExpand';
 
 const Navbar = () => {
+    const [clicked, setClicked] = useState(false)
+    const [darkMode, setDarkMode] = useState(true)
     const [open, setOpen] = useState(false)
-
-    const fixed = () => {
-        console.log(open, 'open render test')
+    const [dimensions, setDimensions] = useState({h: window.innerHeight, w: window.innerWidth})
+    
+    const context = {
+        open,
+        setOpen,
+        clicked,
+        setClicked,
+        darkMode,
+        setDarkMode,
+        dimensions
     }
-
-    useEffect(() => {
-        (() => {
-            console.log('render tes', open)
-        })()
-    }, [open])
-
+        
     return (
-        <Navibar>
-            {
-                !open 
-                    ? <Bar setOpen={setOpen} />
-                    : <Expand  setOpen={setOpen}/>
-            }
-        </Navibar>
+        <AppProvider value={context}>
+            <Navibar>
+                <Bar />
+                <NewExpand />
+            </Navibar>
+        </AppProvider>
     )
 }
 
@@ -36,12 +38,12 @@ const Navibar = styled.div`
     top: 0;
     left: 0;
     z-index: 3;
+    box-shadow: ${props => props.theme.colors.navShadow};
 
     .nav {
         height:60px;
         display: flex;
         position: relative;
-
         
         .nav-logo {
             width: 20%;
@@ -67,16 +69,29 @@ const Navibar = styled.div`
             }
         }
 
+        .nav-theme {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+            @media (min-width: 767px) {
+                width: 5%;
+            }
+            .theme-icon {
+                width:30px;
+                height:30px;
+                cursor: pointer;
+            }
+        }
+
         .nav-menu {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 15%;
+            width: 20%;
             cursor: pointer;
-
-            img {
-                height: 35px;
-                width: 35px;
+            @media (min-width: 767px) {
+                width: 10%;
             }
         }
     }

@@ -39,8 +39,6 @@ const DetailSkeleton = () => {
 const CardSkeleton = styled.div`
     width: 100%;
     margin-top: 2rem;
-    /* background-color: #E8e8e8; */
-    /* box-shadow: 0 4px 10px 0 rgba(33, 33, 33, 0.15); */
     border-radius: 4px;
     position: relative;
     overflow-x: hidden;
@@ -58,7 +56,7 @@ const CardSkeleton = styled.div`
         height: 100%;
         top: 0;
         width: 100%;
-        background: linear-gradient(to right, transparent 0%, #e8e8e8 50%, transparent 100%);
+        background: linear-gradient(to right, transparent 0%, ${props => props.theme.colors.skeletonBox} 50%, transparent 100%);
         animation: load 1s cubic-bezier(0.4, 0.0, 0.2, 1) infinite;
     }
     @keyframes load {
@@ -87,7 +85,7 @@ const CardSkeleton = styled.div`
         display: flex;
         justify-content: space-between;
         .box {
-            background-color: #d8d8d8;
+            background-color: ${props => props.theme.colors.skeletonBox};
             width: 35%;
             height: 25px;
             border-radius:12px;
@@ -99,7 +97,7 @@ const CardSkeleton = styled.div`
     .card-box {
         width: 100%;
         height: 290px;
-        background-color: #d8d8d8;
+        background-color: ${props => props.theme.colors.skeletonBox};
         margin-top: 1rem;
 
         @media(min-width: 1230px) {
@@ -111,7 +109,7 @@ const CardSkeleton = styled.div`
         .box {
             width: 90%;
             height: 25px;
-            background-color: #d8d8d8;
+            background-color: ${props => props.theme.colors.skeletonBox};
             border-radius: 12px;
             &:last-of-type {
                 margin-top: .5rem;
@@ -122,14 +120,14 @@ const CardSkeleton = styled.div`
     .box-t {
         width: 25%;
         height: 25px;
-        background-color: #d8d8d8;
+        background-color: ${props => props.theme.colors.skeletonBox};
         border-radius: 12px;
         margin-bottom: .7rem;
     }
     .circle-wrapper {
         display: flex;
         .circle {
-            background-color: #d8d8d8;
+            background-color: ${props => props.theme.colors.skeletonBox};
             width:40px;
             height: 40px;
             border-radius:50%;

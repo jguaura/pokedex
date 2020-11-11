@@ -2,7 +2,6 @@ import React from 'react'
 import styled from '@emotion/styled'
 import { Link } from 'react-router-dom'
 import TypeBadge from './../TypeBadge/TypeBadge'
-import uuid from 'uuid'
 
 const Card = ({ poke, passRef }) => {
     return (
@@ -32,7 +31,7 @@ const Card = ({ poke, passRef }) => {
 export const CardContent = styled.div`
     .card-container {
         display: flex;
-
+        background-color: ${props => props.theme.colors.background};
         * {margin: 0; padding: 0}
 
         &__sprite {
@@ -61,9 +60,10 @@ export const CardContent = styled.div`
             h4 {
                 /* margin-top: 1rem; */
                 font-size: 1.2rem;
+                color: ${props => props.theme.colors.fontPrimary};
                 &:last-of-type {
                     font-weight: normal;
-                    color: #3a3a3a;
+                    color: ${props => props.theme.colors.fontSecondary};
                 }
             }
         }
