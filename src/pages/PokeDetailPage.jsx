@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import { usePokeDetail } from '../hooks/hooks'
 import DetailCard from './../components/DetailCard/DetailCard'

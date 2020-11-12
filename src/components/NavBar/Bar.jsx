@@ -9,6 +9,11 @@ import MainContext from '../../context/mainContext'
 const Bar = () => {
     const { open, setOpen, setClicked } = useContext(AppContext)
     const { darkMode, setDarkMode } = useContext(MainContext)
+
+    function clicker() {
+        setOpen(prev => !prev)
+        setClicked(prev => !prev)
+    }
     
     return (
         <div className="nav">
@@ -30,12 +35,9 @@ const Bar = () => {
                         :   <Sun className="theme-icon" onClick={() => setDarkMode(darkMode => !darkMode)} />
                 }
             </div>
-            <div className="nav-menu" onClick={() => setOpen(prev => !prev)}>
-            {
-                open
-                    ? <Close style={{width: '40px'}} fill="#fff" stroke="#ccc" />
-                    : <Menu style={{width: '40px'}} fill="#fff" stroke="#ccc"/>
-            }
+            <div className="nav-menu" onClick={() => clicker()}>
+                <Close className="close-icon" style={{width: '30px', display: 'none', transform: 'scale(0)'}} fill="#fff" stroke="#ccc" />
+                <Menu className="menu-icon" style={{width: '40px', transform: 'scale(1)'}} fill="#fff" stroke="#ccc"/>
             </div>
         </div>
     )

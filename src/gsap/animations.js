@@ -30,20 +30,44 @@ export const itemLeave = (ref) => {
 }
 
 export const downMenu = (param) => {
-    
+    console.log('down menu fired')
     tl
-    .to('body', { css: { overflow: 'hidden'} })
+    .to('.menu-icon', {
+        duration: .3,
+        // delay: ,
+        css: { display: 'none', transform: 'scale(0)'},
+        ease: 'expo.inOut'
+    })
+    .to('.close-icon', {
+        duration: .3,
+        css: { display: 'block', transform: 'scale(1)'},
+        ease: 'expo.inOut'
+    })
     .to('.expand', {
         duration: .7,
+        delay: -.7,
         css: { display: 'flex', height: param },
         ease: 'expo.inOut'
     })
+    .to('body', { css: { overflow: 'hidden'} })
+    
 }
 
 export const upMenu = () => {
+    console.log('up menu fired')
     tl
+    .to('.close-icon', {
+        duration: .3,
+        css: { display: 'none', transform: 'scale(0)'}
+    })
+    .to('.menu-icon', {
+        duration: .3,
+        scale: 1,
+        css: { display: 'block', transform: 'scale(1)'}
+    })
     .to('.expand', {
         duration: .7,
+        delay: -.7,
         css: { display: 'none', height: '0vh'},
         ease: 'expo.inOut'
     })

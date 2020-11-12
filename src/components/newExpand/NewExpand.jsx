@@ -13,13 +13,14 @@ import AppContext from '../../context/context'
 
 
 const NewExpand = () => {
-    const { open, setOpen, dimensions } = useContext(AppContext)
+    const { open, setOpen, dimensions,clicked } = useContext(AppContext)
     
     useEffect(() => {
-        console.log('frm new expand', open.menuOpened)
-        open 
-                ? downMenu(dimensions.h - 60)
-                : upMenu()
+        console.log('frm new expand', open)
+        console.log('frm new click', clicked)
+        open
+            ? downMenu(dimensions.h - 60)
+            : upMenu() 
     }, [open])
     return (
         <Expanded className="expand" >
